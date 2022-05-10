@@ -1,0 +1,62 @@
+﻿@model IEnumerable<Category>
+@{
+    ViewData["Tittle"] = "Index";
+}
+
+<partial name ="_Notification" />
+
+<div class="container p-3">
+    <div class="row pt-4">
+        <div class="col-6">
+            <h2 class="text-primary">Gönderici Listesi</h2>
+        </div>
+        <div class="col-6 text-end">
+            <a asp-controller="Category" asp-action="Create" class=" btn btn-primary">
+             <i class="bi bi-plus-circle"></i>  &nbsp; Gönderi Oluştur
+            </a>
+        </div>
+    </div>
+    <br/> <br/> 
+
+<table class="table table-bordered table-striped    " style="width:100%">
+
+<thead>
+    <tr>
+        <th>
+            İsim
+        </th>
+        <th>
+            Sıranız
+        </th>
+    </tr>
+</thead>
+<tbody>
+    @foreach(var obj in Model)
+    {
+        <tr>
+            <td width="50%">
+                @obj.Name
+            </td>
+            <td width="50%">
+                @obj.Id
+            </td>
+        </tr>
+    }
+</tbody>
+
+</table>
+<table class="mt-5 table table-hover">
+      <tr class="table-dark">
+      <th scope="row">Tel No:</th>
+      <td>+99 9999 99 99</td>
+      <td>Email:</td>
+      <td>furkanalemdaroglu@outlook.com</td>
+    </tr>
+      <tr class="table-dark">
+      <th scope="row">İnstagram :</th>
+      <td>somoneusign</td>
+      <td>Github :</td>
+      <td>Frknlmdrgl</td>
+    </tr>
+    </table>
+</div>
